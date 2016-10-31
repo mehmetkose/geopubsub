@@ -133,7 +133,7 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
             raise Return()
 
         message = {'body': datadecoded, 'id': str(uuid.uuid4())}
-        print message
+        print(message)
         for room in self.rooms:
             self.pubclient.publish(room, json.dumps(message))
 
